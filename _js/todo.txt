@@ -1,0 +1,5 @@
+[x] - Update cuiDialog API so you can chain methods
+[ ] - Test/bugfix so the lib works in IE9
+[ ] - Bugfix setContent
+[x] - Add event listener which can close a dialog by pressing the esc button
+[ ] - Run `gulp build`

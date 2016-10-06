@@ -1,0 +1,103 @@
+cui-carousel {
+  display: block;
+  position: relative;
+  width: 640px;
+  margin-left: 200px;
+  overflow: hidden; }
+
+cui-carousel slide {
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  /* overflow: hidden; */
+  height: 100%;
+  background-color: #f09;
+  transition: -webkit-transform ease-in 1s;
+  transition: transform ease-in 1s;
+  transition: transform ease-in 1s, -webkit-transform ease-in 1s;
+  z-index: -1;
+  /* float: left; */ }
+  cui-carousel slide.__isPrev {
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
+    float: none;
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left;
+    z-index: 1; }
+  cui-carousel slide.__isNext {
+    -webkit-transform: translateX(100%);
+        -ms-transform: translateX(100%);
+            transform: translateX(100%);
+    float: none;
+    z-index: 0; }
+  cui-carousel slide.__isCurrent {
+    -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-transform-origin: left;
+        -ms-transform-origin: left;
+            transform-origin: left;
+    height: 100%;
+    position: relative;
+    float: left;
+    z-index: 2; }
+
+/*
+cui-carousel.__toPrev {
+    slide.__isPrev {
+        z-index: 0;
+    }
+    slide.__isNext {
+        z-index: 1;
+    }
+}
+
+cui-carousel.__toNext {
+    slide.__isPrev {
+        z-index: 1;
+    }
+    slide.__isNext {
+        z-index: 0;
+    }
+} */
+.cui-carousel--arrows {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0; }
+
+.cui-carousel--arrow {
+  width: 50%;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  position: absolute; }
+
+.cui-carousel--arrow-right {
+  left: 50%; }
+
+@-webkit-keyframes cuiCarouselNodeInserted {
+  from {
+    color: currentColor; }
+  to {
+    color: currentColor; } }
+
+@keyframes cuiCarouselNodeInserted {
+  from {
+    color: currentColor; }
+  to {
+    color: currentColor; } }
+
+cui-dialog {
+  -webkit-animation-duration: .001s;
+          animation-duration: .001s;
+  -webkit-animation-name: cuiCarouselNodeInserted;
+          animation-name: cuiCarouselNodeInserted; }

@@ -1,0 +1,13 @@
+@keyframes cuiCarouselNodeInserted {
+    from {
+        color: currentColor;
+    }
+    to {
+        color: currentColor;
+    }
+}
+
+cui-dialog {
+    animation-duration: .001s;
+    animation-name: cuiCarouselNodeInserted;
+}

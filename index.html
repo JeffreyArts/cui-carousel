@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CUI Carousel</title>
+    <link rel="stylesheet" href="./css/cui-carousel.css">
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        figure {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+        }
+        img {
+            width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <cui-carousel>
+        <slide>
+            <figure>
+                <img src="https://source.unsplash.com/category/buildings/640x320" alt=""/>
+            </figure>
+        </slide>
+        <slide>
+            <h1>Dit is een slideshow</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat nulla praesentium quasi reprehenderit tempora molestias id facere animi, quia distinctio ipsa, a molestiae unde eum minima quis eligendi quo. Quidem.</p>
+            <p>Consectetur adipisicing elit. Quaerat nulla praesentium quasi reprehenderit tempora molestias id facere animi, quia distinctio ipsa, a molestiae unde eum minima quis eligendi quo. Quidem.</p>
+        </slide>
+        <slide>
+            <figure>
+                <img src="https://source.unsplash.com/category/technology/640x320" alt=""/>
+            </figure>
+        </slide>
+        <slide>
+            <figure>
+                <img src="https://source.unsplash.com/category/people/640x320" alt=""/>
+            </figure>
+        </slide>
+        <div class="cui-carousel--arrows">
+            <div class="cui-carousel--arrow cui-carousel--arrow-left"></div>
+            <div class="cui-carousel--arrow cui-carousel--arrow-right"></div>
+
+        </div>
+    </cui-carousel>
+
+
+    <script>
+    function findAncestor (domElement, query) {
+        var foundElement = domElement.parentElement.querySelector(query);
+        if (foundElement) {
+            return foundElement;
+        }  else {
+            return findAncestor(domElement.parentElement, query);
+        }
+    }
+
+
+
+    document.addEventListener("DOMContentLoaded", function(){
+        var carousel = document.querySelector('cui-carousel');
+        var slides = carousel.querySelectorAll('slide');
+        carousel.slides = slides.length;
+        carousel.currentSlide = 0;
+        carousel.wrap = true;
+
+        carousel.getNext = function(int) {
+            if (this.wrap) {
+                return int >= this.slides-1 ? 0 : int+1;
+            } else {
+                return int >= this.slides-1 ? int : int+1;
+            }
+        }
+
+        carousel.getPrev = function(int) {
+            if (this.wrap) {
+                return int <= 0 ? this.slides-1 : int -1;
+            } else {
+                return int <= 0 ? 0 : int -1;
+            }
+        }
+
+        carousel.changeSlide = function(int) {
+            var self = this;
+            var slides = this.querySelectorAll('slide');
+
+            for (var i = 0; i < slides.length; i++) {
+                var slide = slides[i];
+                slide.className = slide.className.replace('__isCurrent', '');
+                slide.className = slide.className.replace('__isPrev', '');
+                slide.className = slide.className.replace('__isNext', '');
+
+                if (slide.index == this.getPrev(int)) {
+                    slide.className += ' __isPrev';
+                }
+
+                if (slide.index == this.getNext(int)) {
+                    slide.className += ' __isNext';
+                }
+
+                if (slide.index == int) {
+                    slide.className += ' __isCurrent';
+                }
+            }
+            
+            this.currentSlide = int;
+
+        }
+        for (var i = 0; i < carousel.slides; i++) {
+            var slide = slides[i];
+            slide.index = i;
+
+            slide.onclick = function(e){
+                carousel.changeSlide(carousel.getNext(carousel.currentSlide));
+            }
+        }
+        var arrowRight = carousel.querySelector('.cui-carousel--arrow-right').onclick = function(){
+            carousel.changeSlide(carousel.getNext(carousel.currentSlide));
+        }
+        var arrowLeft = carousel.querySelector('.cui-carousel--arrow-left').onclick = function(){
+            carousel.changeSlide(carousel.getPrev(carousel.currentSlide));
+        }
+
+
+        carousel.changeSlide(carousel.currentSlide);
+
+    }, false);
+
+    </script>
+</body>
+</html>

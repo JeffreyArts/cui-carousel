@@ -1,0 +1,87 @@
+cui-carousel {
+    display: block;
+    position: relative;
+    width: 640px;
+    margin-left: 200px;
+    //height: 320px;
+    overflow: hidden;
+}
+
+cui-carousel slide {
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    //float: left;
+    /* overflow: hidden; */
+    height: 100%;
+    background-color: #f09;
+    transition: transform ease-in 1s;
+    z-index: -1;
+    /* float: left; */
+
+    &.__isPrev {
+        transform: translateX(-100%);
+        float: none;
+        transform-origin:left;
+        z-index: 1;
+    }
+    &.__isNext {
+        transform: translateX(100%);
+        float: none;
+        z-index: 0;
+    }
+    &.__isCurrent {
+        transform: translateX(0);
+        transform-origin:left;
+        height: 100%;
+        position: relative;
+        float: left;
+        z-index: 2;
+    }
+}
+/*
+cui-carousel.__toPrev {
+    slide.__isPrev {
+        z-index: 0;
+    }
+    slide.__isNext {
+        z-index: 1;
+    }
+}
+
+cui-carousel.__toNext {
+    slide.__isPrev {
+        z-index: 1;
+    }
+    slide.__isNext {
+        z-index: 0;
+    }
+} */
+
+.cui-carousel--arrows {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.cui-carousel--arrow {
+    width: 50%;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.cui-carousel--arrow-right {
+    left: 50%;
+}
+
+
+@import './nodeInserted';

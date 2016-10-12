@@ -71,6 +71,7 @@
         carousel.currentSlide = 0;
         carousel.wrap = true;
 
+
         carousel.getNext = function(int) {
             if (this.wrap) {
                 return int >= this.slides-1 ? 0 : int+1;
@@ -87,7 +88,7 @@
             }
         }
 
-        carousel.changeSlide = function(int) {
+        carousel.setSlide = function(int) {
             var self = this;
             var slides = this.querySelectorAll('slide');
 
@@ -109,27 +110,29 @@
                     slide.className += ' __isCurrent';
                 }
             }
-            
-            this.currentSlide = int;
 
+            this.currentSlide = int;
         }
+
         for (var i = 0; i < carousel.slides; i++) {
             var slide = slides[i];
             slide.index = i;
 
             slide.onclick = function(e){
-                carousel.changeSlide(carousel.getNext(carousel.currentSlide));
+                carousel.setSlide(carousel.getNext(carousel.currentSlide));
             }
         }
+
         var arrowRight = carousel.querySelector('.cui-carousel--arrow-right').onclick = function(){
-            carousel.changeSlide(carousel.getNext(carousel.currentSlide));
+            carousel.setSlide(carousel.getNext(carousel.currentSlide));
         }
+
         var arrowLeft = carousel.querySelector('.cui-carousel--arrow-left').onclick = function(){
-            carousel.changeSlide(carousel.getPrev(carousel.currentSlide));
+            carousel.setSlide(carousel.getPrev(carousel.currentSlide));
         }
 
 
-        carousel.changeSlide(carousel.currentSlide);
+        carousel.setSlide(carousel.currentSlide);
 
     }, false);
 

@@ -32,7 +32,7 @@ cui-carousel.__toNext {
   z-index: 3; }
 
 .cui-carousel--arrow {
-  width: 46.668px;
+  width: 56.668px;
   bottom: 0;
   top: 25%;
   position: absolute;
@@ -53,7 +53,7 @@ cui-carousel.__toNext {
   -webkit-transform: rotateX(180deg);
           transform: rotateX(180deg); }
   .cui-carousel--arrow-left:before, .cui-carousel--arrow-left:after {
-    left: 10px; }
+    left: 15px; }
   .cui-carousel--arrow-left:before {
     -webkit-transform-origin: top left;
         -ms-transform-origin: top left;
@@ -72,7 +72,7 @@ cui-carousel.__toNext {
 .cui-carousel--arrow-right {
   right: 0; }
   .cui-carousel--arrow-right:before, .cui-carousel--arrow-right:after {
-    right: 10px; }
+    right: 15px; }
   .cui-carousel--arrow-right:before {
     -webkit-transform-origin: top right;
         -ms-transform-origin: top right;
@@ -87,6 +87,36 @@ cui-carousel.__toNext {
     -webkit-transform: translate(0, 0) rotate(-33deg);
         -ms-transform: translate(0, 0) rotate(-33deg);
             transform: translate(0, 0) rotate(-33deg); }
+
+.cui-carousel--indicators {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+  text-align: center;
+  position: absolute;
+  left: 25%;
+  bottom: 15px;
+  z-index: 3;
+  margin: 0;
+  padding: 0; }
+
+.cui-carousel--indicator {
+  display: inline-block;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  opacity: .8; }
+  .cui-carousel--indicator + .cui-carousel--indicator {
+    margin-left: 12px; }
+  .cui-carousel--indicator.__isActive {
+    opacity: 1; }
 
 cui-carousel slide {
   width: 100%;

@@ -1,10 +1,12 @@
+$carouselPadding: 15px;
+
 cui-carousel {
     display: block;
     position: relative;
     width: 640px;
     margin-left: 200px;
-    //height: 320px;
     overflow: hidden;
+    //height: 320px;
 }
 
 /*
@@ -28,5 +30,6 @@ cui-carousel.__toNext {
 
 
 @import './components/arrows';
+@import './components/indicators';
 @import './components/slides';
 @import './nodeInserted';

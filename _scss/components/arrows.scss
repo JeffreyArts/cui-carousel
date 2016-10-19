@@ -1,5 +1,4 @@
 $arrowWidth: 4px;
-$arrowPadding: 10px;
 
 .cui-carousel--arrows {
     position: absolute;
@@ -11,7 +10,7 @@ $arrowPadding: 10px;
 }
 
 .cui-carousel--arrow {
-    width: $arrowWidth*6.667 + $arrowPadding * 2;
+    width: $arrowWidth*6.667 + $carouselPadding * 2;
     bottom: 0;
     top: 25%;
     position: absolute;
@@ -40,7 +39,7 @@ $arrowPadding: 10px;
 
     &:before,
     &:after {
-        left: $arrowPadding;
+        left: $carouselPadding;
     }
 
     &:before {
@@ -59,7 +58,7 @@ $arrowPadding: 10px;
 
     &:before,
     &:after {
-        right: $arrowPadding;
+        right: $carouselPadding;
     }
 
     &:before {

@@ -1,0 +1,33 @@
+$indicatorSize: 12px;
+
+.cui-carousel--indicators {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    text-align: center;
+    position: absolute;
+    left: 25%;
+    bottom: $carouselPadding;
+    z-index: 3;
+    margin: 0;
+    padding: 0;
+}
+
+.cui-carousel--indicator {
+    display: inline-block;
+    border-radius: 100%;
+    width: $indicatorSize;
+    height: $indicatorSize;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    opacity: .8;
+
+    + .cui-carousel--indicator {
+        margin-left: $indicatorSize;
+    }
+
+    &.__isActive {
+        opacity: 1;
+    }
+}

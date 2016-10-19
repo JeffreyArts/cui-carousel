@@ -1,0 +1,37 @@
+cui-carousel slide {
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    /* overflow: hidden; */
+    height: 100%;
+    background-color: #f09;
+    transition: transform ease-in 1s;
+    z-index: -1;
+    /* float: left; */
+
+    &.__isPrev {
+        transform: translateX(-100%);
+        float: none;
+        transform-origin:left;
+        z-index: 1;
+    }
+    
+    &.__isNext {
+        transform: translateX(100%);
+        float: none;
+        z-index: 0;
+    }
+
+    &.__isCurrent {
+        transform: translateX(0);
+        transform-origin:left;
+        height: 100%;
+        position: relative;
+        float: left;
+        z-index: 2;
+    }
+}

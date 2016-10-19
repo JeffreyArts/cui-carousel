@@ -5,6 +5,89 @@ cui-carousel {
   margin-left: 200px;
   overflow: hidden; }
 
+/*
+cui-carousel.__toPrev {
+    slide.__isPrev {
+        z-index: 0;
+    }
+    slide.__isNext {
+        z-index: 1;
+    }
+}
+
+cui-carousel.__toNext {
+    slide.__isPrev {
+        z-index: 1;
+    }
+    slide.__isNext {
+        z-index: 0;
+    }
+} */
+.cui-carousel--arrows {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 3; }
+
+.cui-carousel--arrow {
+  width: 46.668px;
+  bottom: 0;
+  top: 25%;
+  position: absolute;
+  height: 50%;
+  opacity: .8; }
+  .cui-carousel--arrow:hover {
+    opacity: 1; }
+  .cui-carousel--arrow:before, .cui-carousel--arrow:after {
+    content: '';
+    position: absolute;
+    height: 25%;
+    width: 4px;
+    top: 25%;
+    background-color: #fff; }
+
+.cui-carousel--arrow-left {
+  left: 0;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg); }
+  .cui-carousel--arrow-left:before, .cui-carousel--arrow-left:after {
+    left: 10px; }
+  .cui-carousel--arrow-left:before {
+    -webkit-transform-origin: top left;
+        -ms-transform-origin: top left;
+            transform-origin: top left;
+    -webkit-transform: translate(0, 100%) rotate(-33deg);
+        -ms-transform: translate(0, 100%) rotate(-33deg);
+            transform: translate(0, 100%) rotate(-33deg); }
+  .cui-carousel--arrow-left:after {
+    -webkit-transform-origin: bottom left;
+        -ms-transform-origin: bottom left;
+            transform-origin: bottom left;
+    -webkit-transform: translate(0, 0) rotate(33deg);
+        -ms-transform: translate(0, 0) rotate(33deg);
+            transform: translate(0, 0) rotate(33deg); }
+
+.cui-carousel--arrow-right {
+  right: 0; }
+  .cui-carousel--arrow-right:before, .cui-carousel--arrow-right:after {
+    right: 10px; }
+  .cui-carousel--arrow-right:before {
+    -webkit-transform-origin: top right;
+        -ms-transform-origin: top right;
+            transform-origin: top right;
+    -webkit-transform: translate(0, 100%) rotate(33deg);
+        -ms-transform: translate(0, 100%) rotate(33deg);
+            transform: translate(0, 100%) rotate(33deg); }
+  .cui-carousel--arrow-right:after {
+    -webkit-transform-origin: bottom right;
+        -ms-transform-origin: bottom right;
+            transform-origin: bottom right;
+    -webkit-transform: translate(0, 0) rotate(-33deg);
+        -ms-transform: translate(0, 0) rotate(-33deg);
+            transform: translate(0, 0) rotate(-33deg); }
+
 cui-carousel slide {
   width: 100%;
   display: block;
@@ -47,42 +130,6 @@ cui-carousel slide {
     position: relative;
     float: left;
     z-index: 2; }
-
-/*
-cui-carousel.__toPrev {
-    slide.__isPrev {
-        z-index: 0;
-    }
-    slide.__isNext {
-        z-index: 1;
-    }
-}
-
-cui-carousel.__toNext {
-    slide.__isPrev {
-        z-index: 1;
-    }
-    slide.__isNext {
-        z-index: 0;
-    }
-} */
-.cui-carousel--arrows {
-  position: absolute;
-  z-index: 3;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0; }
-
-.cui-carousel--arrow {
-  width: 50%;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  position: absolute; }
-
-.cui-carousel--arrow-right {
-  left: 50%; }
 
 @-webkit-keyframes cuiCarouselNodeInserted {
   from {

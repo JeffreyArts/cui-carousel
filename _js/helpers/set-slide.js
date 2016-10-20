@@ -6,7 +6,10 @@ cuiCarouselHelper.setSlide = function(domElement){
             slide.className = slide.className.replace('__isCurrent', '');
             slide.className = slide.className.replace('__isPrev', '');
             slide.className = slide.className.replace('__isNext', '');
-            domElement.indicators[i].className = domElement.indicators[i].className.replace('__isActive', '').trim();
+
+            if (domElement.showIndicator) {
+                domElement.indicators[i].className = domElement.indicators[i].className.replace('__isActive', '').trim();
+            }
 
             if (slide.index == domElement.getPrev(int)) {
                 slide.className += ' __isPrev';

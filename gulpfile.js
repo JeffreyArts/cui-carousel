@@ -45,6 +45,7 @@ var source    = {
             './_js/helpers/initialize.js',
             './_js/helpers/node-inserted.js',
             './_js/helpers/get-next.js',
+            './_js/helpers/get-attribute-value.js',
             './_js/helpers/get-prev.js',
             './_js/helpers/set-slide.js',
             './_js/events.js',

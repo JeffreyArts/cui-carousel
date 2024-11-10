@@ -2,8 +2,8 @@ cui-carousel {
   display: block;
   position: relative;
   width: 640px;
-  margin-left: 200px;
-  overflow: hidden; }
+  overflow: hidden; 
+}
 
 /*
 cui-carousel.__toPrev {
